@@ -4,8 +4,8 @@
   --vcal-border-color: #e7e9ed;
   --vcal-today-bg-color: #10989E;
   --vcal-today-color: #fff;
-  --vcal-selected-bg-color: #E7E9ED;
-  --vcal-selected-color: #333;
+  --vcal-abs-bg-color: #F44336;
+  --vcal-abs-color: #fff;
 }
 
 #v-cal *, #v-cal *:before, #v-cal *:after {
@@ -104,9 +104,9 @@
   color: var(--vcal-today-color);
 }
 
-#v-cal .vcal-date--selected {
-  background-color: var(--vcal-selected-bg-color);
-  color: var(--vcal-selected-color);
+#v-cal .vcal-date--abs {
+  background-color: var(--vcal-abs-bg-color);
+  color: var(--vcal-abs-color);
 }
 
 #v-cal .vcal-date--disabled {
@@ -115,4 +115,10 @@
   opacity: 0.5;
 }
 
-
+#v-cal .ml-1{margin-left:0%}
+#v-cal .ml-2{margin-left:14.28%}
+#v-cal .ml-3{margin-left:28.56%}
+#v-cal .ml-4{margin-left:42.84%}
+#v-cal .ml-5{margin-left:57.12%}
+#v-cal .ml-6{margin-left:71.4%}
+#v-cal .ml-7{margin-left:85.68%}
