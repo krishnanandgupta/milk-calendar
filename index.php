@@ -3,12 +3,10 @@ include 'db_config.php';
 if (isset($_GET["m"])&&isset($_GET["y"])){
 	$mm  = $_GET["m"];
 	$yy  = $_GET["y"];
-	$cm = 0;
 }
 else {
 	$mm  = date("n");
 	$yy  = date("Y");
-	$cm = 1;
 }
 
 if($mm==1){
@@ -70,23 +68,26 @@ html {box-sizing: border-box;font-size: 10px;}body {font-family: -apple-system, 
 <div class="vcal-body">
 <?php
 $total=0;
+$abs=0;
 
 for($i=1;$i<=$row['num_day'];$i++){
-	echo '<a href="/entry.php?dd='.$i.'&mm='.$mm.'&yy='.$yy.'"';
+	echo '<a href="/entry.php?dd='.$i.'&mm='.$mm.'&yy='.$yy.'" class="vcal-date';
 	if($i==1) 
-		echo 'class="vcal-date" style="margin-left:'. $day*14.28 .'%">';	
-	elseif($cm && $i==date("d"))
-		echo 'class="vcal-date vcal-date--today">';		
-	else 
-		echo 'class="vcal-date">';
-	echo '<b>'.$i.'</b><span class="vcal-date--disabled">';
+		echo ' ml-'.$day;
+	if($mm==date("n") && $i==date("d"))
+		echo ' vcal-date--today';		
+	if(!is_null($row[$i]) && $row[$i]==0)
+		echo ' vcal-date--abs';	
+	echo '"><b>'.$i.'</b><span class="vcal-date--disabled">';
 	if(!is_null($row[$i])){		
 		if($row[$i]!=0 ){
 			echo $row[$i].' L';
 			$total+=$row[$i];	
 		}
-		else
+		else{
 			echo 'ABS';
+			$abs++;
+		}	
 	}
 
 
@@ -96,7 +97,7 @@ for($i=1;$i<=$row['num_day'];$i++){
 ?>
 </div>
 </div>
-<p class="demo-picked">TOTAL : <span><?php echo $total;?> Liter</span></p>
+<p class="demo-picked">TOTAL : <span><?php echo $total;?> Liter</span> & <span><?php echo $abs;?> ABS</span> </p>
 <a href="/">Goto Current Month</a>
 </div>
 </body>
