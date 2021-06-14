@@ -30,7 +30,7 @@ a:visited {
 	margin: 1.6rem auto;
 	max-width: 42rem;
 	border-radius: 5px;
-	padding: 25px;
+	padding: 1.5rem;
 }
 
 .frame {
@@ -63,4 +63,8 @@ a:visited {
 
 .red {
 	background: #F44336;
+}
+
+.orange {
+	background: #ff9800;
 }
