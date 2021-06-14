@@ -72,14 +72,20 @@ for ($i = 1; $i <= $row['num_day']; $i++) {
     if (!is_null($row[$i]) && $row[$i] == 0) {
         echo ' vcal-date--abs';
     }
+    if (!is_null($row[$i]) && $row[$i] == 9) {
+        echo ' vcal-date--df';
+    }
     echo '"><b>'.$i.'</b><span class="vcal-date--disabled">';
     if (!is_null($row[$i])) {
-        if ($row[$i] != 0) {
+        if ($row[$i] != 0 && $row[$i] != 9) {
             echo $row[$i].' L';
             $total += $row[$i];
-        } else {
+        } 
+        elseif($row[$i] == 0) {
             echo 'ABS';
-            //	$abs++;
+        } 
+        else{
+            echo 'DF';
         }
     }
 

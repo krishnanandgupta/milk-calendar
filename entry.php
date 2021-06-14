@@ -24,10 +24,10 @@ elseif (isset($_GET["dd"]) && isset($_GET["mm"]) && isset($_GET["yy"])) {
 <form class="frame" method="get" href="/entry.php">
     <h4>Quantity of Milk</h4>
 <?php 
-echo '
-	<a class="btn green" href="?dd='.$dd.'&mm='.$mm.'&yy='.$yy.'&milk=.5"><b>1/2L Liter</b></a>
+echo '  <a class="btn green" href="?dd='.$dd.'&mm='.$mm.'&yy='.$yy.'&milk=.5"><b>1/2L Liter</b></a>
 	<a class="btn" href="?dd='.$dd.'&mm='.$mm.'&yy='.$yy.'&milk=1"><b>1L Liter</b></a>
-	<a class="btn red" href="?dd='.$dd.'&mm='.$mm.'&yy='.$yy.'&milk=0"><b>ABS</b></a>';
+	<a class="btn red" href="?dd='.$dd.'&mm='.$mm.'&yy='.$yy.'&milk=0"><b>ABS</b></a>
+    <a class="btn orange" href="?dd='.$dd.'&mm='.$mm.'&yy='.$yy.'&milk=9"><b>DF</b></a>';
 ?>
   </form>
 	<br>
