@@ -6,6 +6,8 @@
 	--vcal-today-color: #fff;
 	--vcal-abs-bg-color: #F44336;
 	--vcal-abs-color: #fff;
+	--vcal-df-bg-color: #ff9800;
+	--vcal-df-color: #fff;
 }
 
 #v-cal *,
@@ -110,7 +112,10 @@
 	background-color: var(--vcal-abs-bg-color);
 	color: var(--vcal-abs-color);
 }
-
+#v-cal .vcal-date--df {
+	background-color: var(--vcal-df-bg-color);
+	color: var(--vcal-df-color);
+}
 #v-cal .vcal-date--disabled {
 	border-radius: 0;
 	cursor: not-allowed;
